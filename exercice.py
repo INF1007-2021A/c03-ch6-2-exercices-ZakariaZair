@@ -6,10 +6,8 @@ from matplotlib.colors import cnames
 
 def list_to_dict(some_list: list) -> dict:
     # TODO: Transformer la liste en dictionnaire, les éléments de la liste deviennent les clés et leur index deviennent les valeurs
-    dicto = {}
-    for i in range(len(some_list)):
-        dicto[some_list[i]] = i
-    return dicto
+    
+    return {value: index for index, value in enumerate(some_list)}
 
 
 def color_name_to_hex(colors: list) -> list:
@@ -23,27 +21,20 @@ def color_name_to_hex(colors: list) -> list:
 
 
 def create_list() -> list:
-    # TODO: Créer une liste des 10 000 premiers entiers positif, sauf pour les entiers de 15 à 350
-    new_list = []
-    max = 10000
-    for i in range(0,max):
-        if i < 15 or i > 350:
-            new_list.append(i)
-        else:
-            max += 1    
+    # TODO: Créer une liste des 10 000 premiers entiers positif, sauf pour les entiers de 15 à 350  
 
-    return new_list
+    return [i for i in range(0, 10000) if not(15 < i <= 350)]
 
 
 def compute_mse(model_dict: dict) -> dict:
     # TODO: Calculer l'erreur quadratique moyen pour chaque modèle. Retourner un dictionnaire contenant les MSE.
     for key in model_dict:
-        value = 0
+        mse = 0
         for i in range(len(model_dict[key])):
-            value += (model_dict.get(key)[i][0] - model_dict.get(key)[i][1])**2
-        model_dict[key] = value/len(model_dict[key])
+            mse += (model_dict.get(key)[i][0] - model_dict.get(key)[i][1])**2
+        model_dict[key] = mse/len(model_dict[key])
     
-    return model_dict
+    return {model: (sum(y - y_pred)**2 for y, y_pred in results)/len(model_dict) for model, results in model_dict.items()}
 
 
 def main() -> None:
