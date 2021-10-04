@@ -1,9 +1,41 @@
 test_color_name_to_hex (__main__.TestExercice) ... ok
-test_compute_mse (__main__.TestExercice) ... ok
-test_create_list (__main__.TestExercice) ... ok
+test_compute_mse (__main__.TestExercice) ... FAIL
+test_create_list (__main__.TestExercice) ... FAIL
 test_list_to_dict (__main__.TestExercice) ... ok
 
+======================================================================
+FAIL: test_compute_mse (__main__.TestExercice)
 ----------------------------------------------------------------------
-Ran 4 tests in 0.001s
+Traceback (most recent call last):
+  File "/Users/zakariazair/Desktop/PolyTravail/INF1007/Exercice/c03-ch6-2-exercices-ZakariaZair/test_exercice.py", line 62, in test_compute_mse
+    self.assertDictEqual(
+AssertionError: {'LR': 4.6, 'DNN': -1.6, 'RF': -3.6} != {'LR': 220.6, 'DNN': 14.0, 'RF': 1681.8}
+- {'DNN': -1.6, 'LR': 4.6, 'RF': -3.6}
+?         -  ^        ^          ^^ ^
 
-OK
++ {'DNN': 14.0, 'LR': 220.6, 'RF': 1681.8}
+?          + ^        ^^^          ^^^^ ^
+ : Erreur dans le calcul des MSE
+
+======================================================================
+FAIL: test_create_list (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/zakariazair/Desktop/PolyTravail/INF1007/Exercice/c03-ch6-2-exercices-ZakariaZair/test_exercice.py", line 48, in test_create_list
+    self.assertListEqual(
+AssertionError: Lists differ: [0, 1[41 chars] 14, 15, 351, 352, 353, 354, 355, 356, 357, 35[57202 chars]9999] != [0, 1[41 chars] 14, 351, 352, 353, 354, 355, 356, 357, 358, 3[57198 chars]9999]
+
+First differing element 15:
+15
+351
+
+First list contains 1 additional elements.
+First extra element 9664:
+9999
+
+Diff is 86294 characters long. Set self.maxDiff to None to see it. : Mauvaise reponse
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.057s
+
+FAILED (failures=2)
