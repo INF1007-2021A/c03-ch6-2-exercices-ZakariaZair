@@ -1,19 +1,9 @@
 test_color_name_to_hex (__main__.TestExercice) ... ok
-test_compute_mse (__main__.TestExercice) ... FAIL
+test_compute_mse (__main__.TestExercice) ... ok
 test_create_list (__main__.TestExercice) ... ok
 test_list_to_dict (__main__.TestExercice) ... ok
 
-======================================================================
-FAIL: test_compute_mse (__main__.TestExercice)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/Users/zakariazair/Desktop/PolyTravail/INF1007/Exercice/c03-ch6-2-exercices-ZakariaZair/test_exercice.py", line 62, in test_compute_mse
-    self.assertDictEqual(
-AssertionError: {} != {'LR': 220.6, 'DNN': 14.0, 'RF': 1681.8}
-- {}
-+ {'DNN': 14.0, 'LR': 220.6, 'RF': 1681.8} : Erreur dans le calcul des MSE
+Ran 4 tests in 0.001s
 
-----------------------------------------------------------------------
-Ran 4 tests in 0.002s
-
-FAILED (failures=1)
+OK
